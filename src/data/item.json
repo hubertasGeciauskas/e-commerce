@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "name": "Soy wax candle Angellina",
+      "price": 10.99,
+      "imgUrl": "/images/ANGELINA.webp",
+      "hoverImgUrl": "/images/All.webp"
+    },
+    {
+      "id": 2,
+      "name": "Soy wax candle Beatrich",
+      "price": 10.99,
+      "imgUrl": "/images/BEATRICH.webp",
+      "hoverImgUrl": "/images/All.webp"
+    },
+    {
+      "id": 3,
+      "name": "Soy wax candle Danielle",
+      "price": 10.99,
+      "imgUrl": "/images/DANIELLE.webp",
+      "hoverImgUrl": "/images/All.webp"
+    },
+    {
+      "id": 4,
+      "name": "Soy wax candle Dorotti",
+      "price": 10.99,
+      "imgUrl": "/images/DOROTTI.webp",
+      "hoverImgUrl": "/images/All.webp"
+    }
+  ]
