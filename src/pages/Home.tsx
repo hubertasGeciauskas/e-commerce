@@ -1,3 +1,5 @@
+import { AdSection } from "../components/AdSection";
+import { Favorite } from "../components/Favorite";
 import { Hero } from "../components/Hero";
 import { Subscription } from "../components/Subscription";
 
@@ -6,10 +8,12 @@ import { Subscription } from "../components/Subscription";
 export function Home () {
     return (
         
-            <>
-            <Hero/>
-            <Subscription/>
-        </>
+            < >
+                <Hero/>
+                <Favorite/>
+                <AdSection/>
+                <Subscription/>
+            </>
         
     )
         

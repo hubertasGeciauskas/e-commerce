@@ -2,7 +2,7 @@ import { Button, ButtonGroup, Container, Flex, Heading, Text, Input, Link, Stack
 
 export function Footer () {
     return (
-        <Container display={"flex"} p={2}   bg={"#a1bf6e"}  ml={"auto"} mr={"auto"} maxW={"80%"}>
+        <Container display={"flex"} p={2}   bg={"#5a5c32"} maxW={"100%"} >
             
 
                 <Flex flex={1}  direction={"column"} justifyContent={"center"} alignItems={"center"} alignSelf="flex-start">
@@ -20,8 +20,8 @@ export function Footer () {
                     <Heading size={"md"} color={"white"}>
                         Contact
                     </Heading>
-                    <Text fontSize={".7rem"} color={"white"} >+37065899416</Text>
-                    <Text fontSize={".7rem"} color={"white"}>hubertas.geciauskas@gmail.com</Text>
+                    <Text fontSize={".7rem"} color={"white"} >+37066677888</Text>
+                    <Text fontSize={".7rem"} color={"white"}>randomemail@gmail.com</Text>
                     <ButtonGroup  spacing={"0"} >
                         <Button colorScheme='white' >
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">

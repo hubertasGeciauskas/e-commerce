@@ -13,8 +13,7 @@ function App() {
   return (
     <ShoppingCartProvider>
       <NavBar/>
-
-      <Container bg={"white"} p={0}  maxW={"80%"} mr={"auto"} ml={"auto"} >
+      <Container bg={"white"} p={0} maxW={"100%"}  >
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/store" element={<Store/>} />

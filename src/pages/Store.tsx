@@ -4,8 +4,8 @@ import { StoreItem } from "../components/StoreItem"
 import { Subscription } from "../components/Subscription"
 
 export function Store () {
-    return <>
-        <Text fontSize={"4xl"} >Store</Text>
+    return (
+    <>
         <Grid p={{base: "100px", md: "40px", lg: "15px", xl: "10px" }} templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 2fr)", xl: "repeat(4, 1fr)"}}  gap={6} >
             {items.map((x, i) => <GridItem key={i} >
                 <StoreItem {...x} />
@@ -14,4 +14,4 @@ export function Store () {
         </Grid>
         <Subscription/>
     </>
-}
+)}
