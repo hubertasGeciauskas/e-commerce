@@ -1,16 +1,16 @@
 import { AdSection } from "../components/AdSection";
-import { Favorite } from "../components/Favorite";
+import { Products } from "../components/Products";
 import { Hero } from "../components/Hero";
 import { Subscription } from "../components/Subscription";
 
 
 
-export function Home () {
+export function HomePage () {
     return (
         
             < >
                 <Hero/>
-                <Favorite/>
+                <Products title="All-time favorite items" amount={-4} />
                 <AdSection/>
                 <Subscription/>
             </>

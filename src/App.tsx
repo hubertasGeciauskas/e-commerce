@@ -1,11 +1,13 @@
 import { Routes, Route} from "react-router-dom"
 import { Container } from "@chakra-ui/react"
-import { Home } from "./pages/Home"
-import { Store } from "./pages/Store"
-import { About } from "./pages/About"
+import { HomePage } from "./pages/HomePage"
+import { ShopPage } from "./pages/ShopPage"
+import { AboutPage } from "./pages/AboutPage"
 import { NavBar } from "./components/NavBar"
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
 import { Footer } from "./components/Footer"
+import { CheckoutPage } from "./pages/CheckoutPage"
+import { ProductPage } from "./pages/ProductPage"
 
 
 function App() {
@@ -15,9 +17,11 @@ function App() {
       <NavBar/>
       <Container bg={"white"} p={0} maxW={"100%"}  >
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/store" element={<Store/>} />
-          <Route path="/about" element={<About/>} />
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/product" element={<ShopPage/>} />
+          <Route path="/about" element={<AboutPage/>} />
+          <Route path="/checkout" element={<CheckoutPage/>} />
+          <Route path="/product/:id" element={<ProductPage/>}  /> 
         </Routes>
       </Container>
 

@@ -37,7 +37,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
 
         
 
-        <Flex flex={1} >
+        <Flex flex={1} justifyContent={"flex-end"} >
           {quantity === 1 && <Text color={"gray"} display={"flex"} alignItems={"flex-end"}  fontWeight={"bold"} fontSize=".75rem">{formatCurrency(item.price)}</Text>}
           {quantity > 1 && <Text color={"gray"} display={"flex"} alignItems={"flex-end"}  fontWeight={"bold"} fontSize=".75rem">{quantity} x {formatCurrency(item.price)}</Text>}
         </Flex>

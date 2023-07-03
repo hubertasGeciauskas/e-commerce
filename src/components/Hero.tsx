@@ -18,7 +18,7 @@ export function Hero() {
         alignItems="center"
         flexDirection="column"
         position="relative"
-        height="420px"
+        height="500px"
       >
             <video src="/images/hero.mp4" autoPlay muted loop 
                 style={{

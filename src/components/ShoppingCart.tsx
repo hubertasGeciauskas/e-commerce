@@ -58,24 +58,30 @@ import {
                   <CartItem key={item.id} {...item} />
                 ))}
               </Stack>
+              <Stack mt={5} direction={"row"} justifyContent={"space-around"} alignItems={"baseline"} >
+                <Text as="b">
+                    Total{" "}
+                    {formatCurrency(
+                      cartItems.reduce(
+                        (total, cartItem) => {
+                          const item = storeItems.find((i) => i.id === cartItem.id);
+                          return total + (item?.price ?? 0) * cartItem.quantity;
+                        },
+                        0
+                      )
+                    )}
+                  </Text>
+                  <ButtonGroup>
+                    <Button as={"a"} href="/checkout" _hover={{opacity: "0.9"}} bg={"black"} color={"white"} onClick={closeCart}>Checkout</Button>
+                  </ButtonGroup>
+
+              </Stack>
+              
               
             </ModalBody>
-            <ModalFooter justifyContent={"space-around"} >
-                <Text as="b">
-                  Total{" "}
-                  {formatCurrency(
-                    cartItems.reduce(
-                      (total, cartItem) => {
-                        const item = storeItems.find((i) => i.id === cartItem.id);
-                        return total + (item?.price ?? 0) * cartItem.quantity;
-                      },
-                      0
-                    )
-                  )}
-                </Text>
-                <ButtonGroup>
-                    <Button _hover={{opacity: "0.9"}} bg={"black"} color={"white"} onClick={closeCart}>Checkout</Button>
-                </ButtonGroup>
+            <ModalFooter >
+                Here can be your AD
+                
             </ModalFooter>
           </ModalContent>
         </Modal>

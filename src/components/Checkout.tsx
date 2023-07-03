@@ -1,31 +1,58 @@
-import { Modal, ModalBody, ModalFooter, ModalHeader, ModalOverlay } from "@chakra-ui/react";
-import { useState } from "react";
+import {
+  Box,
+  Step,
+  StepDescription,
+  StepIcon,
+  StepIndicator,
+  StepNumber,
+  StepSeparator,
+  StepStatus,
+  StepTitle,
+  Stepper,
+  useSteps,
+} from '@chakra-ui/react';
 
-interface ShoppingCartProps {
-    isOpen: boolean;
-  }
+interface Step {
+  title: string;
+  description: string;
+}
 
-export function Checkout ({isOpen}: ShoppingCartProps) {
+const steps: Step[] = [
+  { title: 'First', description: 'Contact Info' },
+  { title: 'Second', description: 'Date & Time' },
+  { title: 'Third', description: 'Select Rooms' },
+];
 
-    const [isOpen, setIsOpen] = useState(false)
+function Checkout() {
+  const { activeStep } = useSteps({
+    index: 1,
+    count: steps.length,
+  });
 
-    return (
-        <>
-        <Modal isOpen={isOpen}  >
-            <ModalOverlay/>
+  return (
+    <Stepper index={activeStep} orientation="vertical" height="400px" gap="0">
+      {steps.map((step, index) => (
+        <Step key={index}>
+          <StepIndicator>
+            <StepStatus
+              complete={<StepIcon />}
+              incomplete={<StepNumber />}
+              active={<StepNumber />}
+            />
+          </StepIndicator>
 
-            <ModalHeader>
+          <Box flexShrink={0}>
+            <StepTitle>{step.title}</StepTitle>
+            <StepDescription>{step.description}</StepDescription>
+          </Box>
 
-            </ModalHeader>
+          <StepSeparator />
+        </Step>
+      ))}
+    </Stepper>
+  );
+}
 
-            <ModalBody>
-
-            </ModalBody>
-
-            <ModalFooter>
-
-            </ModalFooter>
-        </Modal>
-        </>
-    )
+export default function App() {
+  return <Checkout />;
 }
