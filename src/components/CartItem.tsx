@@ -1,6 +1,6 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import storeItems from "../data/item.json";
-import { Image, Text, Box, Flex, Button, ButtonGroup } from "@chakra-ui/react";
+import { Image, Text, Flex, Button, ButtonGroup, Divider } from "@chakra-ui/react";
 import { formatCurrency } from "../utilities/formatCurrency";
 
 interface CartItemProps {
@@ -15,17 +15,35 @@ export function CartItem({ id, quantity }: CartItemProps) {
   if (!item) return null;
 
   return (
-    <Flex gap={2} >
-      <Image loading="lazy" w={"125px"} h={"75px"} objectFit="cover" src={item.imgUrl} />
-      <Box>
+    <Flex direction={"column"} gap={"1rem"} >
+      <Flex direction={"row"} >
+        <Flex flex={2} >
+          <Image loading="lazy" w={"125px"} h={"75px"} objectFit="cover" src={item.imgUrl} />
+        </Flex>
+
+        <Flex direction={"column"} >
           <Text>{item.name}</Text>
-          <Text fontWeight={"bold"} fontSize=".75rem">{formatCurrency(item.price)}</Text>
-          <ButtonGroup  alignItems={"baseline"} >
-            <Button  onClick={() => decreaseCartQuantity(item.id)}>-</Button>
-            <Text fontSize=".85rem">x{quantity}</Text>
-            <Button onClick={() => increaseCartQuantity(item.id)}>+</Button>
-          </ButtonGroup>
-      </Box>
+          <Flex flex={3} direction={"row"} gap={".3rem"} justifyContent={"flex-start"} alignItems={"center"} >
+            
+            <ButtonGroup isAttached border={"1px solid"} alignItems={"baseline"} justifyContent="flex-start" >
+              <Button fontWeight={"bold"} borderRight={"1px solid"} w={"40px"} colorScheme="white" color={"black"}  onClick={() => decreaseCartQuantity(item.id)}>-</Button>
+              <Text fontWeight={"bold"} textAlign={"center"} w={"40px"} fontSize=".85rem">{quantity}</Text>
+              <Button fontWeight={"bold"} borderLeft={"1px solid"} w={"40px"} colorScheme="white" color={"black"} onClick={() => increaseCartQuantity(item.id)}>+</Button>
+            </ButtonGroup>
+            
+        </Flex>
+
+        </Flex>
+
+        
+
+        <Flex flex={1} >
+          {quantity === 1 && <Text color={"gray"} display={"flex"} alignItems={"flex-end"}  fontWeight={"bold"} fontSize=".75rem">{formatCurrency(item.price)}</Text>}
+          {quantity > 1 && <Text color={"gray"} display={"flex"} alignItems={"flex-end"}  fontWeight={"bold"} fontSize=".75rem">{quantity} x {formatCurrency(item.price)}</Text>}
+        </Flex>
+        
+      </Flex>
+      <Divider/>
     </Flex>
   );
 }

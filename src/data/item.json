@@ -1,30 +1,50 @@
 [
     {
       "id": 1,
-      "name": "Soy wax candle Angellina",
+      "name": "Soy wax candle Citrus Burst",
       "price": 10.99,
-      "imgUrl": "/images/ANGELINA.webp",
-      "hoverImgUrl": "/images/All.webp"
+      "imgUrl": "/images/zvake-citrus-burst.png"
     },
     {
       "id": 2,
-      "name": "Soy wax candle Beatrich",
+      "name": "Soy wax candle Cosy Home",
       "price": 10.99,
-      "imgUrl": "/images/BEATRICH.webp",
-      "hoverImgUrl": "/images/All.webp"
+      "imgUrl": "/images/zvake-cosy-home-copy.png"
+      
     },
     {
       "id": 3,
-      "name": "Soy wax candle Danielle",
+      "name": "Soy wax candle Fresh Day",
       "price": 10.99,
-      "imgUrl": "/images/DANIELLE.webp",
-      "hoverImgUrl": "/images/All.webp"
+      "imgUrl": "/images/zvake-fresh-day-copy.png"
+      
     },
     {
       "id": 4,
-      "name": "Soy wax candle Dorotti",
+      "name": "Soy wax candle Hypnotic Night",
       "price": 10.99,
-      "imgUrl": "/images/DOROTTI.webp",
-      "hoverImgUrl": "/images/All.webp"
+      "imgUrl": "/images/zvake-hypnotic-night-copy.png"
+      
+    },
+    {
+      "id": 5,
+      "name": "Soy wax candle Tropical Breeze",
+      "price": 10.99,
+      "imgUrl": "/images/zvake-tropical-breeze-copy.png"
+      
+    },
+    {
+      "id": 6,
+      "name": "Soy wax candle True Love",
+      "price": 10.99,
+      "imgUrl": "/images/zvake-true-love-copy.png"
+      
+    },
+    {
+      "id": 7,
+      "name": "Soy wax candle Warm Spices",
+      "price": 10.99,
+      "imgUrl": "/images/zvake-warm-spices-copy.png"
+      
     }
   ]

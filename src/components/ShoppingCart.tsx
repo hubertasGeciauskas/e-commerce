@@ -11,6 +11,7 @@ import {
     Stack,
     useStyleConfig,
     ButtonGroup,
+    CloseButton
   } from "@chakra-ui/react";
   import { useShoppingCart } from "../context/ShoppingCartContext";
   import { CartItem } from "./CartItem";
@@ -23,7 +24,7 @@ import {
   }
   
   export function ShoppingCart({ isOpen }: ShoppingCartProps) {
-    const { closeCart, cartItems } = useShoppingCart();
+    const { closeCart, cartItems, cartQuantity } = useShoppingCart();
 
     const modalStyles = useStyleConfig("Modal", { variant: "custom" });
     const customStyles = {
@@ -44,13 +45,10 @@ import {
           <ModalOverlay />
           <ModalContent sx={customStyles} >
             <ModalHeader bg={"black"}  >
-              <Flex justifyContent={"space-between"} >
-                  <Text mr={5} color={"white"} >Cart</Text>
-                  <Button onClick={closeCart} _hover={{opacity: "0.8"}} bg={"black"} >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024">
-                    <path fill="white" d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504L738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512L828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496L285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512L195.2 285.696a64 64 0 0 1 0-90.496z"/></svg>
-                  </Button>
-                
+              <Flex justifyContent={"space-between"} alignItems={"baseline"} >
+                  <Text mr={5} color={"white"} > Your Cart</Text>
+                  <Text fontSize={"md"} color={"gray"} >{cartQuantity} items</Text>
+                  <CloseButton onClick={closeCart} size={"lg"} _hover={{opacity: "0.8"}} color={"white"} />
               </Flex>
               
             </ModalHeader>
