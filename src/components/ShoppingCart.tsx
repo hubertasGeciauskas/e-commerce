@@ -58,7 +58,7 @@ import {
                   <CartItem key={item.id} {...item} />
                 ))}
               </Stack>
-              <Stack mt={5} direction={"row"} justifyContent={"space-around"} alignItems={"baseline"} >
+              { cartQuantity > 0 && <Stack mt={5} direction={"row"} justifyContent={"space-around"} alignItems={"baseline"} >
                 <Text as="b">
                     Total{" "}
                     {formatCurrency(
@@ -75,7 +75,13 @@ import {
                     <Button as={"a"} href="/checkout" _hover={{opacity: "0.9"}} bg={"black"} color={"white"} onClick={closeCart}>Checkout</Button>
                   </ButtonGroup>
 
-              </Stack>
+              </Stack>}
+
+              { cartQuantity === 0 && 
+                    <Flex justifyContent={"center"} >
+                    <Button _hover={{opacity: "0.9"}} bg={"black"} color={"white"} onClick={closeCart}>Continue shoping</Button>
+                  </Flex>
+              }
               
               
             </ModalBody>

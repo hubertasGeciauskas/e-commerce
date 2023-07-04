@@ -22,10 +22,9 @@ export function Hero() {
       >
             <video src="/images/hero.mp4" autoPlay muted loop 
                 style={{
-                width: "100%", // Adjust the video width as needed
-                height: "100%", // Adjust the video height as needed
-                objectFit: "cover",
-                background: "linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0))",
+                width: "100%", 
+                height: "100%", 
+                objectFit: "cover"
                 }}
             />
                     <Heading position="absolute" top={"8%"} left={"5%"} color="white" style={{ opacity: showHeading ? 1 : 0, transition: "opacity 1s ease" }} >Handcrafted Candles for a Unique Experience</Heading>
