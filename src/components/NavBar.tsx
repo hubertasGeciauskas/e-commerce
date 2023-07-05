@@ -1,10 +1,12 @@
 import { Link, Stack, Button , Container, Flex, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { useLocation } from "react-router-dom"
+// import { useState } from "react"
 
 
 export function NavBar () {
     const { openCart, cartQuantity} = useShoppingCart()
+    // const [isOpen, setIsOpen] = useState(false)
 
     const {pathname} = useLocation()
     
@@ -32,6 +34,20 @@ export function NavBar () {
                     >
                     Shop
                     </Link>
+
+                    {/* <Menu isOpen={isOpen} >
+                        <MenuButton as="button"  onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} >
+                            Open menu
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem as="a" href="#">a
+                            Link 1
+                            </MenuItem>
+                            <MenuItem as="a" href="#">
+                            Link 2
+                            </MenuItem>
+                        </MenuList>
+                        </Menu> */}
 
                     <Link
                     style={{ 

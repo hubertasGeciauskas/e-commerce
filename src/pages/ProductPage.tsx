@@ -1,10 +1,12 @@
 import { Products } from "../components/Products"
 import { Product } from "../components/Product"
+import { ShopNav } from "../components/ShopNav"
 export function ProductPage () {
   return (
-    <>
-    <Product/>
-    <Products title="You may also like this" amount={-4} />
+    <>  
+      <ShopNav/>
+      <Product  />
+      <Products title="You may also like this" amount={-4} />
     </>
   )
 }
