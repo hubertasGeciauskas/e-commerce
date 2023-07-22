@@ -1,12 +1,25 @@
-import { Link, Stack, Button , Container, Flex, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react"
+import { Link, Stack, Button , Container, Flex, Menu, MenuButton, MenuList, MenuItem, } from "@chakra-ui/react"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { useLocation } from "react-router-dom"
-// import { useState } from "react"
+import { useState, useRef } from "react"
 
 
 export function NavBar () {
     const { openCart, cartQuantity} = useShoppingCart()
-    // const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    const buttonRef = useRef(null);
+    const menuRef = useRef(null);
+  
+    const handleToggle = () => {
+        setIsOpen(!isOpen);
+      };
+    
+      const handleMouseLeave = () => {
+        setIsOpen(false);
+      };
+
+
+  
 
     const {pathname} = useLocation()
     
@@ -24,30 +37,26 @@ export function NavBar () {
                     Home
                     </Link>
 
-                    <Link
-                        style={{ 
-                         borderBottom: pathname.includes("/product") ? "1px solid" : "",
-                         pointerEvents: pathname.includes("/product") ? "none" : "auto",
-                         opacity: pathname.includes("/product") ? 1 : "", }}
-                    color={"white"}
-                    href="/product"
-                    >
-                    Shop
-                    </Link>
-
-                    {/* <Menu isOpen={isOpen} >
-                        <MenuButton as="button"  onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)} >
-                            Open menu
+                    <Menu isOpen={isOpen} onClose={() => setIsOpen(false)}>
+                        <MenuButton color={"white"} ref={buttonRef} onMouseEnter={handleToggle}
+                                    style={{ 
+                                        borderBottom: pathname.includes("/product") ? "1px solid" : "",
+                                        // pointerEvents: pathname.includes("/product") ? "none" : "auto",
+                                        opacity: pathname.includes("/product") ? 1 : "", }}
+                        >
+                            Shop
                         </MenuButton>
-                        <MenuList>
-                            <MenuItem as="a" href="#">a
-                            Link 1
+                        <MenuList ref={menuRef} onMouseLeave={handleMouseLeave}>
+                            <MenuItem as="a" href="/product">
+                                Soy Wax Candles
                             </MenuItem>
                             <MenuItem as="a" href="#">
-                            Link 2
+                                Canddle Bundles (not ready)
                             </MenuItem>
                         </MenuList>
-                        </Menu> */}
+                    </Menu>
+
+                   
 
                     <Link
                     style={{ 

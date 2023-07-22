@@ -16,12 +16,14 @@ export function CartItem({ id, quantity }: CartItemProps) {
 
   return (
     <Flex direction={"column"} gap={"1rem"} >
+
       <Flex direction={"row"} >
+
         <Flex flex={2} >
           <Image loading="lazy" w={"125px"} h={"75px"} objectFit="cover" src={item.imgUrl} />
         </Flex>
 
-        <Flex direction={"column"} >
+        <Flex flex={4} direction={"column"} >
           <Text>{item.name}</Text>
           <Flex flex={3} direction={"row"} gap={".3rem"} justifyContent={"flex-start"} alignItems={"center"} >
             
@@ -43,7 +45,9 @@ export function CartItem({ id, quantity }: CartItemProps) {
         </Flex>
         
       </Flex>
+
       <Divider/>
+
     </Flex>
   );
 }
